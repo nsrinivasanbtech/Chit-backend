@@ -6,6 +6,7 @@ router.get('/details', async (req, res) => {
     try {
         const detail = await details.find({})
         console.log(detail)
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(detail)
     } catch(e) {
         res.send(e).status(500)
